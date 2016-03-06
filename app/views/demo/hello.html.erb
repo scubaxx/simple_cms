@@ -6,23 +6,33 @@
 
 <% target = "world" %>
 <%= "Hello #{target}" %>
+<br />
+<!-- Here its important the role of # -->
+
+
 
 <% @array.each do |n| %>
+<!-- @array is an instance variable -->
 	<%= n %><br/>
 <% end %>
 
 <br />
 
 <a href="/demo/index">Index page 1</a><br />
+<!-- ^ This is an example of a regular link -->
 <%= link_to('Index page 2', {:action => 'index'}) %>
-
+<!-- ^This is an example of a Rails Link, using the method link_to -->
 <br />
 ID: <%= params[:id] %><br />
+<!-- Will display :id grabbing it from the URL parameter -->
 ID: <%= @id %><br />
+<!-- Will grab id from @instance_variable from controller -->
 Next Page: <%= @page.to_i + 1%><br />
+<!-- The method "to_i" converts a string to an integer -->
 
 <hr />
 <%= params.inspect %>
+<!-- method ".inspect" displays the contents of the params variables -->
 
 
 
