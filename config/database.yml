@@ -9,24 +9,30 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
-default: &default
+development:
   adapter: mysql2
   encoding: utf8
+  database: simple_cms_development
   pool: 5
   username: scubaxx
   password: milit0
   socket: /tmp/mysql.sock
 
-development:
-  <<: *default
-  database: simple_cms_development
+# development:
+  # <<: *default
+  # database: simple_cms_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
   database: simple_cms_test
+  pool: 5
+  username: scubaxx
+  password: 
+  socket: /tmp/mysql.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -48,7 +54,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
   database: simple_cms_production
-  username: simple_cms
-  password: <%= ENV['SIMPLE_CMS_DATABASE_PASSWORD'] %>
+  username: scubaxx
+  password: 
+  socket: /tmp/mysql.sock
