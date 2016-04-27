@@ -6,6 +6,7 @@ class CreateSectionEdits < ActiveRecord::Migration
 	    t.string :summary	
 	    t.timestamps null: false
     end
+    add_index :section_edits, ["admin_user_id", "section_id"]
   end
 
   def down
