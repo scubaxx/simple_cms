@@ -25,7 +25,8 @@
 <!-- This is a conditional -in the form of a ternary operator. See the "?" and ":"     -->
       <td class="center"><%= subject.pages.size %></td>
       <td class="actions">
-        <%= link_to("Show", '#', :class => 'action show') %>
+        <%= link_to("Show", {:action => 'show',:id => subject.id}, :class => 'action show') %>
+<!-- I replaced a place holder "#" with a hash {:action => 'show',:id => subject.id}          -->
         <%= link_to("Edit", '#', :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
