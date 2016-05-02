@@ -2,10 +2,10 @@
 <!-- This class "subjects index" helps me track the controller & the action that I am ON	 -->
   <h2>Subjects</h2>
 
-  <%= link_to("Add New Subject", '#', :class => 'action new') %>
+  <%= link_to("Add New Subject", {:action => 'new'}, :class => 'action new') %>
 <!-- A "link_to" tag that is going to take me to a new subject -->
-<!-- A place holder '#' -->
-
+<!-- A place holder '#' after "Add New Subject" was replaced by a hash -->
+<!-- {:action => 'new'} << I added a link to "new" action -->
   <table class="listing" summary="Subject list">
     <tr class="header">
       <th>&nbsp;</th>
