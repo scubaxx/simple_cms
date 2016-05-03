@@ -27,7 +27,7 @@
       <td class="actions">
         <%= link_to("Show", {:action => 'show',:id => subject.id}, :class => 'action show') %>
 <!-- I replaced a place holder "#" with a hash {:action => 'show',:id => subject.id} so that I tell the link where to go. and I wanna go to the action and then to the id         -->
-        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Edit", {:action => 'edit', :id => subject.id}, :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
     </tr>
