@@ -31,6 +31,20 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
   end
 
+  def update
+    @subject = Subject.find(params[:id])
+    # find an existing object using the params method
+    if @subject.update_attributes(subject_params)
+    # After I find my object update_attributes updates the features
+    # The private method subject_params filters my attributes
+      redirect_to(:action => 'show', :id => @subject.id)
+    # If the params criteria is met redirect to show
+    else
+    # if the update fails, redisplay the form 'edit'
+      render('edit')
+    end    
+  end  
+
   def delete
   end
 
