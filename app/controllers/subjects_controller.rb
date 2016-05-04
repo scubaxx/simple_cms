@@ -28,6 +28,7 @@ class SubjectsController < ApplicationController
   end
 
   def edit
+    @subject = Subject.find(params[:id])
   end
 
   def delete
